@@ -10,7 +10,6 @@ const PageStack = styled(Stack)`
   position: relative;
   min-height: 100vh;
   align-items: center;
-  background-color: red;
 `
 
 const PageContent = styled(PageStack)<PageProps>`
