@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { background } from '../../../contants/zindex'
-import Stack from '../../core/wrappers/Stack'
+import Stack from '../../core/Stack'
 
 const pages = [
   {

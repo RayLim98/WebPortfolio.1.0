@@ -5,6 +5,10 @@ import debounce from '../utils/debounce';
 type thresholdType = 'up' | 'down'
 type sizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
+/**
+ * @description Hooks for the screen size. 
+ * Returns TRUE if the current size is within the specified threshold 
+ */
 const useScreenSize = (size: sizeType, threshold: thresholdType) => {
   const [width, setWidth] = useState<number>(window.innerWidth)
   const option = screenSizes[size]
