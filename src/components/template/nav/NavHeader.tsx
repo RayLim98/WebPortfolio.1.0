@@ -1,5 +1,5 @@
-import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-scroll'
 
 const StyledNav = styled.nav`
   position: sticky;
@@ -16,13 +16,16 @@ export const header = 10;
 
 const navOptions = [
   {
-    name: 'About'
+    name: 'About',
+    id: 'about'
   },
   {
-    name: 'Project'
+    name: 'Project',
+    id: 'projects'
   },
   {
-    name: 'Contact'
+    name: 'Contact',
+    id: 'contact'
   },
 ]
 
@@ -31,11 +34,15 @@ const NavHeader = () => {
     <StyledNav height={10}>
       {
         navOptions.map((item)=> 
-          <button>
+          <Link to={item.id}
+							smooth={true} 
+							spy={true} 
+							duration={500}
+          >
             <h2>
-              {item.name}
+            {item.name}
             </h2>
-          </button>
+          </Link>
         )
       }
     </StyledNav>

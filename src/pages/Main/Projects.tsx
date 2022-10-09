@@ -3,7 +3,7 @@ import Section from '../../components/core/Section'
 
 const Projects = () => {
   return (
-    <Section>
+    <Section id='projects'>
       Projects
     </Section>
   )

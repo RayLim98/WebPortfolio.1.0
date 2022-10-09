@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom'
+
 import Main from './pages/Main';
 import Contact from './pages/Contact';
 import GlobalStyles from './globalStyling';

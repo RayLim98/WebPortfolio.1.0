@@ -1,10 +1,9 @@
-import React from 'react'
 import Section from '../../components/core/Section'
 import Stack from '../../components/core/Stack'
 
 const TitlePage = () => {
   return (
-    <Section height={90} bgColor={'blue'}>
+    <Section height={90} bgColor={'blue'} id={'titlepage'}>
       <Stack height='100%'>
         <Stack flexGrow={2} alignItems={'center'} justifyItems={'center'}>
           <Stack justifyContent='center'>
