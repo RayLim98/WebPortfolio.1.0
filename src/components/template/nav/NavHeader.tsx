@@ -11,6 +11,9 @@ const StyledNav = styled.nav`
   left: 0;
   min-height: ${({height}: {height: number})=> height ? `${height}vh`: `10vh`};
 `
+const StyledLink = styled(Link)`
+  cursor: pointer;
+`
 
 export const header = 10;
 
@@ -34,15 +37,16 @@ const NavHeader = () => {
     <StyledNav height={10}>
       {
         navOptions.map((item)=> 
-          <Link to={item.id}
-							smooth={true} 
-							spy={true} 
-							duration={500}
+          <StyledLink
+            to={item.id}
+            smooth={true} 
+            spy={true} 
+            duration={500}
           >
             <h2>
             {item.name}
             </h2>
-          </Link>
+          </StyledLink>
         )
       }
     </StyledNav>

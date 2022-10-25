@@ -3,7 +3,7 @@ import Stack from '../../components/core/Stack'
 
 const TitlePage = () => {
   return (
-    <Section height={90} bgColor={'blue'} id={'titlepage'}>
+    <Section height={90} id={'titlepage'}>
       <Stack height='100%'>
         <Stack flexGrow={2} alignItems={'center'} justifyItems={'center'}>
           <Stack justifyContent='center'>

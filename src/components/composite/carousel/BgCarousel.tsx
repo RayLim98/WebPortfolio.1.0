@@ -6,15 +6,23 @@ import Stack from '../../core/Stack'
 const pages = [
   {
     name: 'Title',
+    from: '#51A1FF',
+    to: '#887DFF',
   },
   {
     name: 'About',
+    from: '#51A1FF',
+    to: '#887DFF',
   },
   {
     name: 'Projects',
+    from: '#51A1FF',
+    to: '#887DFF',
   },
   {
     name: 'Contact',
+    from: '#51A1FF',
+    to: '#887DFF',
   },
 ]
 
@@ -28,6 +36,7 @@ const CarouselWrapper = styled(Stack)`
 const CarouselItem = styled.div`
   width: 100vw;
   translate: ${({position}:{position: number})=> position && `${-position}%`};
+  background: linear-gradient(to right, #51A1FF, #887DFF,#51A1FF);
 `
 
 const BgCarousel = () => {
@@ -54,11 +63,7 @@ const BgCarousel = () => {
     <CarouselWrapper>
       {
         items.map(item => 
-          <CarouselItem position={y}>
-            <h1>
-              {item.name}
-            </h1>
-          </CarouselItem>
+          <CarouselItem position={y}/>
           )
       }
     </CarouselWrapper>
