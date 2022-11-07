@@ -4,7 +4,7 @@ import Stack from './Stack'
 const PageStack = styled(Stack)`
   flex-grow: 1;
   min-height: 100vh;
-  max-width: 1200px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
 `

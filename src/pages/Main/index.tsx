@@ -7,20 +7,25 @@ import Projects from './Projects'
 import TitlePage from './TitlePage'
 
 import useScreenSize from '../../hooks/useScreenSize'
+import MobileHeader from '../../components/template/nav/MobileHeader'
 
 /**
- * @description 
+ * @description Home page 
  */
 const Main = () => {
-  const isMobile = useScreenSize('sm', 'up')
-
+  const isMobile = useScreenSize('sm', 'down')
   console.log(isMobile)
   return (
     <>
       <BgCarousel/>
       <PageStack>
+        {
+          isMobile && <MobileHeader/>  
+        }
         <TitlePage/>
-        <NavHeader/>
+        {
+          !isMobile && <NavHeader/>
+        }
         <About/>
         <Projects/>
         <Contact/>

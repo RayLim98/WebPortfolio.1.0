@@ -1,9 +1,9 @@
-import Section from '../../components/core/Section'
+import Article from '../../components/core/Section'
 import Stack from '../../components/core/Stack'
 
 const TitlePage = () => {
   return (
-    <Section height={90} id={'titlepage'}>
+    <Article height={90} id={'titlepage'}>
       <Stack height='100%'>
         <Stack flexGrow={2} alignItems={'center'} justifyItems={'center'}>
           <Stack justifyContent='center'>
@@ -21,7 +21,7 @@ const TitlePage = () => {
           </h1>
         </Stack>
       </Stack>
-    </Section>
+    </Article>
   )
 }
 

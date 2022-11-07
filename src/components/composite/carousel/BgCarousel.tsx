@@ -1,7 +1,17 @@
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { background } from '../../../contants/zindex'
 import Stack from '../../core/Stack'
+
+type linearGradiant = {
+  to: string
+  from: string
+}
+
+interface Item {
+  position: number
+  gColor: linearGradiant
+}
 
 const pages = [
   {
@@ -11,18 +21,18 @@ const pages = [
   },
   {
     name: 'About',
-    from: '#51A1FF',
-    to: '#887DFF',
+    from: '#887DFF',
+    to: '#B2F1FF',
   },
   {
     name: 'Projects',
-    from: '#51A1FF',
-    to: '#887DFF',
+    from: '#B2F1FF',
+    to: '#0F4482',
   },
   {
     name: 'Contact',
-    from: '#51A1FF',
-    to: '#887DFF',
+    from: '#0F4482',
+    to: '#183338',
   },
 ]
 
@@ -33,10 +43,12 @@ const CarouselWrapper = styled(Stack)`
   height: 100vh;
 `
 
-const CarouselItem = styled.div`
+const CarouselItem = styled.div<Item>`
   width: 100vw;
-  translate: ${({position}:{position: number})=> position && `${-position}%`};
-  background: linear-gradient(to right, #51A1FF, #887DFF,#51A1FF);
+  ${({gColor})=> gColor && `
+    background: linear-gradient(to right, ${gColor.from}, ${gColor.to});
+  `}
+  translate: ${({position})=> position && `${-position}%`};
 `
 
 const BgCarousel = () => {
@@ -62,9 +74,19 @@ const BgCarousel = () => {
   return (
     <CarouselWrapper>
       {
-        items.map(item => 
-          <CarouselItem position={y}/>
-          )
+        items.map(item => {
+            const linearGrad = {
+              to: item.to,
+              from: item.from
+            }
+            return (
+              <CarouselItem 
+                position={y}
+                gColor={linearGrad}
+              />
+            )
+          }
+        )
       }
     </CarouselWrapper>
   )

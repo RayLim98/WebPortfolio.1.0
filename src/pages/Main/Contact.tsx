@@ -1,11 +1,10 @@
-import React from 'react'
-import Section from '../../components/core/Section'
+import Article from '../../components/core/Section'
 
 const Contact = () => {
   return (
-    <Section id='contact'>
+    <Article id='contact'>
       Contact
-    </Section>
+    </Article>
   )
 }
 
